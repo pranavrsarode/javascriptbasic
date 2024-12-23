@@ -86,7 +86,7 @@ function numberAppending(){
     console.log( 7.3e3 );  // 7.3 billions (same as 7300000000 or 7_300_000_000)
 }
 //numberAppending();
-////////////////////////////////
+// https://javascript.info/number
 function waysToWriteNumber(){
     let billion = 1000000000;
     console.log(billion);
