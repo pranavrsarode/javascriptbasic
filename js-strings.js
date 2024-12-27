@@ -312,3 +312,81 @@ function localeCompare(){
         console.log( countries.sort( (a, b) => a.localeCompare(b) ) ); // Andorra,Österreich,Vietnam (correct!)
 }
 //localeCompare();
+
+function reverseArrayElements(){
+        let arr = [1, 2, 3, 4, 5];
+        arr.reverse();
+
+        console.log( arr ); // 5,4,3,2,1
+}
+//reverseArrayElements();
+
+function splitAndJoin(){
+        let names = 'Bilbo, Gandalf, Nazgul';
+
+        let arr = names.split(', ');
+
+        for (let name of arr) {
+        console.log( `A message to ${name}.` ); // A message to Bilbo  (and other names)
+        }
+}
+//splitAndJoin();
+
+function splitIntoLetters(){
+        let str = "Pranav";
+
+        console.log( str.split('') ); // P,r,a,n,a,v
+}
+//splitIntoLetters();
+
+function arrJoinGlueMEthod(){
+        let arr = ['Bilbo', 'Gandalf', 'Nazgul'];
+
+        let str = arr.join(';'); // glue the array into a string using ;
+
+        console.log( str ); // Bilbo;Gandalf;Nazgul
+}
+//arrJoinGlueMEthod();
+
+function reduce(){
+        let arr = [1, 2, 3, 4, 5];
+
+        let result = arr.reduce((sum, current) => sum + current, 0);
+
+        console.log(result); // 15
+}
+//reduce();
+
+function arrayIsValue(){
+        console.log("Array do not have any value it is "+Array.isArray({})); // false
+
+        console.log("Array have the value it is "+Array.isArray([])); // true
+}
+//arrayIsValue();
+
+function thidArg(){
+        let army = {
+                minAge: 18,
+                maxAge: 27,
+                canJoin(user) {
+                  return user.age >= this.minAge && user.age < this.maxAge;
+                }
+        };
+              
+              let users = [
+                {age: 16},
+                {age: 20},
+                {age: 23},
+                {age: 30}
+              ];
+              
+              // find users, for who army.canJoin returns true
+              let soldiers = users.filter(army.canJoin, army);
+              
+              console.log(soldiers.length); // 2
+              console.log(soldiers[0].age); // 20
+              console.log(soldiers[1].age); // 23
+}
+//thidArg();
+
+
